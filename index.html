@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjana Sonawane</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="C:\Users\gaura\OneDrive\Desktop\codes\web dev\my portfolio\style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: rgba(42, 7, 61, 0.225);
+            color: rgb(10, 2, 2);
+            margin: 0; 
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .content {
+            flex: 1;
+        }
+        
+        
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(212, 73, 77);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            list-style: none;
+            margin: 0 20px;
+            transition: 0.5s;
+        }
+        
+        nav ul li a {
+            position: relative;
+            text-decoration: none;
+            padding: 5px;
+            font-size: small;
+            color: #fff;
+            text-transform: uppercase;
+            transition: 0.5s;
+        }
+        
+        nav ul li a:hover {
+            transform: scale(1.1);
+            opacity: 1;
+            filter: blur(10);
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        nav ul li a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s;
+            transform-origin: right;
+            transform: scaleX(0);
+            z-index: -1;
+        }
+        
+        nav ul li a:hover:before {
+            transition: transform 0.5s;
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+        
+        .dropdown-content .mail {
+            display: flex;
+            align-items: center;
+        }
+        
+        .dropdown-content .phone {
+            display: flex;
+            align-items: center;
+        }
+        
+        .dropdown-content .phone span {
+            flex: 1;
+        }
+        
+        
+        
+        
+        .dropdown-content .mail img {
+            height: 25px;
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .dropdown-content .phone img {
+            height: 23px;
+            width: auto;
+            opacity: 0.9;
+            margin-right: 10px;
+        }
+        
+        .left {
+            position: absolute;
+            -webkit-text-stroke: 2px #d6f4f4;
+            font-variation-settings: "wght" 900, "ital" 1;
+            font-size: 2rem;
+            text-align: center;
+            color: transparent;
+            font-family: "Meta", sans-serif;
+            text-shadow: 5px 5px 0px #07bccc,
+                15px 15px 0px #482896,
+        }
+        
+        .left:hover {
+            font-variation-settings: "wght" 100, "ital" 0;
+            text-shadow: none;
+        }
+        .FirstSection {
+            display: flex;
+            justify-content: space-around;
+            margin: 23px 0;
+        }
+        
+        .leftsection {
+            font-size: 2.5rem;
+            margin: 80px 0;
+        }
+        
+        .FirstSection>div {
+            width: 30%;
+        }
+        
+        .rightsection img {
+            width: 100%;
+            margin: -60px 0;
+        }
+        
+        .COLOR {
+            color: rgb(109, 79, 100);
+        }
+        
+        #element {
+            color: rgb(109, 79, 100);
+        }
+        
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            background-color: #2b1f37;
+            padding: 20px;
+            height: 150px;
+        }
+        
+        footer .sections .sec-section a img {
+            height: 25px;
+            width: 25px;
+            margin: 10px;
+        }
+        
+        footer .sections .third-section a img {
+            height: 50px;
+            width: 50px;
+            margin: 10px;
+        }
+        
+        footer .sections .forth-section a img {
+            height: 22px;
+            width: 22px;
+            margin: 10px;
+        }
+        
+        footer .sections .fifth-section a img {
+            height: 25px;
+            width: 25px;
+            margin: 10px;
+        }
+        
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 12px;
+        }
+        
+        footer span {
+            align-items: center;
+            justify-content: space-around;
+            margin: 10px;
+        }
+        
+        .all-rights-reserved {
+            text-align: center;
+            margin-top: -6px;
+            font-size: 12px;
+            color: #888;
+        }
+        
+        nav li {
+            display: inline-block;
+        }
+        
+        nav li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        nav .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(159, 3, 183);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        nav .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        nav .dropdown-content li {
+            display: block;
+        }
+        
+        
+        .size {
+            margin: -13px;
+        }
+        
+        footer .well {
+            margin: 30px;
+        }
+        
+        .face-img img {
+            height: 55px;
+            width: auto;
+            margin-left: -64px;
+        }
+        
+        .container-face {
+            display: flex;
+            align-items: center;
+        }
+        
+        .face-img,
+        .left {
+            flex: 0;
+            padding: 10px;
+        }
+      
+        .dropdown-content img {
+            height: 20px;
+            width: auto;
+        }
+        
+        .dropdown-content span {
+            justify-content: space-between;
+        }
+        
+        .dropdown-content li {
+            justify-content: space-between;
+        }
+
+        .certi a {
+            color: #00d7c3;
+            text-decoration: none;
+        }
+
+
+        .about-me {
+            text-align: center;
+            justify-content: space-around;
+        }
+        
+        .edu {
+            text-align: center;
+            justify-content: space-around;
+        }
+        
+        .about-para {
+            text-align: center;
+            justify-content: space-around;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            overflow-x: hidden;
+        }
+        
+        .edu-para {
+            text-align: center;
+            justify-content: space-around;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            overflow-x: hidden;
+        }
+        
+        .about-para p {
+            text-decoration: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: justify;
+            overflow-x: hidden;
+        }
+        
+        .edu-para p {
+            text-decoration: none;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: justify;
+            overflow-x: hidden;
+        }
+        
+        .skill {
+            text-align: center;
+            justify-content: space-around;
+        }
+        
+        .para-skill {
+            text-align: center;
+            justify-content: space-around;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            overflow-x: hidden;
+        }
+        
+        .institute {
+            margin: 25px;
+        }
+        
+        .institute ul {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <nav>
+                <div class="container-face">
+                    <div class="face-img"><img src="pics/std1.png" alt=""></div>
+                    <div class="left">Sanjana Sonawane</div>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">About</a></li>
+                        
+                        <li class="dropdown">
+                            <a href="#">Contact me</a>
+                            <ul class="dropdown-content">
+                                <li class="mail"><img src="pics/mail2.png" alt=""><span>sanjanasonawane029@gmail.com</span>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="phone"><img src="pics/phone.png" alt=""><span> +91-9974883321</span></li>
+                            </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="FirstSection">
+                
+                <div class="leftsection">
+                    <div> it's <span class="COLOR">Sanjana</span> here.</div>
+                    <span id="element"></span>
+                </div>
+                <div class="rightsection">
+                    <img src="pics/std2.png" alt="">
+                </div>
+            </section>
+
+
+            <div>
+                <h2 class="about-me">About me</h2>
+            </div>
+            <div class="about-para">
+                <p>
+                    My name is sonawane sanjana bapu. I am a second year undergraduate student of the department of metallurgy and materials engineering at IIT KHARAGPUR. Enrolled in its btech course. I am boarder of sister Nivedita hall of residence. I m from surat, Gujarat.I am a design media subhead at TECHNOLOGY STUDENTS GYMKHANA,SPRING FEST , IIT KHARAGPUR for academic session of 2023-24. I am also working as 3D designer at COMPUTER GRAPHICS SOCIETY.
+                </p>
+            </div>
+
+            <div class="table-divider"></div>
+            <div>
+                <h2 class="edu">Education</h2>
+            </div>
+            <div class="edu-para">
+                <p>
+                    Educational background 
+                    I completed my ssc boards from MAHATMA GANDHI VIDHYA SANKUL, a local marathi school, as a Gujarat board student.after that i completed my higher eduction from sunrays school.i also went to a coaching center named GRAB IITy, and successfully secured my seat for iit . And currently i am a part of Indian Institute of Technology Kharagpur.
+                </p>
+            </div>
+            <div class="institute">
+                <ul>
+                    <li>
+                        <h4><span class="college">College</span></h4>
+                        <ul>
+                            <li>LEO. SUNGRASE</li>
+                            <li>B.tech</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><span class="college">HSC</span></h4>
+                        <ul>
+                            <li>INDIAN INSTITUTE OF TECH. KHARAGPUR</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4><span class="college">SCC</span></h4>
+                        <ul>
+                            <li>MGSV School</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="table-divider"></div>
+            <div class="skill">
+                <h2 class="skill-heading">Skill</h2>
+            </div>
+            <div class="para-skill">
+                <p>
+                    
+                </p>
+                <details class="custom-details">
+                    <summary>My Key Skills</summary>
+                    <ul class="skill-set">
+                        <li>BLENDER SOFTWARE</li>
+                        <li>3D GRAPHICS</li>
+                        <li>PHOTSHOPE</li>
+                        <li>ILLUSTRATION SOFTWARE</li>
+                    </ul>
+                </details>
+            </div>
+
+
+            <div>
+                <h2 id="certificates">Certificates</h2>
+            </div>
+            <div class="certi-para">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In quae voluptas doloremque neque corporis
+                    unde
+                    ad labore, repellendus voluptates asperiores deleniti a pariatur earum cum eum voluptatem dolorem
+                    e quia ipsa delectus quidem blanditiis sit possimus recusandae non nisi aspernatur autem
+                    et
+                    quod est suscipit consectetur modi? Doloremque, nihil quam nemo labore, impedit culpa itaque esse
+                    voluptas beatae sed vero velit nulla est necessitatibus laboriosam unde eligendi magni,
+                    reprehendeit assumenda iste mollitia
+                    veritatis!</p>
+            </div>            
+
+
+        </main>
+    </div>
+    <div>
+    </div>
+</body>
+
+</html>
+</main>
+
+<footer>
+    <h2 class="well">
+        <span>thanks for visiting</span>
+    </h2>
+    <div class="size"><span id="string"></span></div>
+    <section class="sections">
+        <div class="sec-section">
+            <a href="https://www.facebook.com/profile.php?id=100085849357350" class="main pic" target="_blank"> <img src="pics/fb.png" alt="main pic">
+            </a>
+        </div>
+        <div class="forth-section">
+            <a href="https://www.linkedin.com/in/sanjana-sonawane-436b09265/" class="main pic" target="_blank"> <img src="pics/ig.png"
+                    alt="main pic"> </a>
+        </div>
+        <div class="fifth-section">
+            <a href="https://www.linkedin.com/in/sanjana-sonawane-436b09265" class="main pic" target="_blank">
+                <img src="pics/nkd.png" alt="main pic"> </a>
+        </div>
+    </section>
+
+    <p class="all-rights-reserved">&copy; 2023 SANJANA SONAWANE. All rights reserved.</p>
+</footer>
+
+</body>
+
+</html>
